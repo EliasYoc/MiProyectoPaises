@@ -1,0 +1,266 @@
+:root{
+    --bg-primary-darkmode:#222222;
+    --bg-second-darkmode:#505050;
+    --bg-third-darkmode:#000;
+    --text-color-darkmode: #dadada;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: background .2s ease;
+
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+header{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0px -2px 8px 1px rgba(0,0,0,0.73);
+}
+header .switch-darkmode{
+    width: 50px;
+    height: 25px;
+    border-radius: 80px;
+    background-color: #f8f8f8;
+    box-shadow: inset .20px .20px 2px .20px rgba(0,0,0,0.53);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .moon{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #00b7ff;
+    position: relative;
+}
+header .moon::before{
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .sun{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgb(255, 166, 0);
+}
+header .switch-circle{
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform .2s ease;
+    z-index: 1;
+}
+header .switch-circle.switch-darkmode{
+    transform: translateX(100%);
+}
+main{
+    margin: 40px;
+}
+/**************** SECCION DE BUSQUEDA ******/
+form{
+    background-color: #dfdfdf;
+    padding: 10px 35px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 60px;
+    box-shadow: 1px 2px 9px -1px rgba(0,0,0,0.56);
+
+}
+form #busqueda-pais{
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 0 2px 0 30px;
+    background-image: url('https://www.flaticon.es/svg/static/icons/svg/660/660029.svg');
+    background-repeat: no-repeat;
+    background-size:25px ;
+    background-position: 4px;
+    font-size: 16px;
+}
+form .form__select{
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* SECCION DE LOS PAISES*/
+section{
+    width: 100%;
+    background-color: #dfdfdf;
+    margin-top: 10px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 10px;
+
+}
+section .card{
+    max-width: 220px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    /* overflow: hidden; */
+    -webkit-box-shadow: 1px 2px 9px -1px rgba(0,0,0,0.56); 
+    box-shadow: 1px 2px 9px -1px rgba(0,0,0,0.56);
+}
+/* section .card.hide{
+    opacity: 0;
+    visibility: hidden;
+} */
+section .card .justify-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+section .card .bg-img{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .card:hover img{
+    object-fit: fill;
+}
+section .card .info-country{
+    margin-top: 10px;
+    /* background-color: yellow; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section .card .info-country .title{
+    /* background-color: rebeccapurple; */
+    padding: 0 10px;
+    text-align: center;
+}
+section .card .info-country h5{
+    font-weight: 700;
+    font-size: 16px;
+}
+section .card .info-country h6{
+    font-weight: 500;
+    font-size: 14.3px;
+}
+section .card .country-data {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 0 10px 10px;
+    /* background-color: powderblue; */
+}
+section .card .country-data p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .card .country-data p span{
+    font-weight: 400;
+}
+/**************************    DARK MODE   *************************/
+body.darkmode{
+    background-color: var(--bg-third-darkmode);
+}
+body.darkmode header{
+    background-color: var(--bg-primary-darkmode);
+    color: #fff;
+}
+body.darkmode header .switch-darkmode{
+    background-color: var(--bg-second-darkmode);
+    box-shadow: inset .20px .20px 2px .20px rgba(174, 174, 174, 0.53);
+}
+body.darkmode header .switch-circle{
+    background-color: gray;
+}
+body.darkmode header .moon::before{
+    background-color:  var(--bg-second-darkmode);
+}
+body.darkmode form,
+body.darkmode section{
+    background-color: var(--bg-primary-darkmode);
+    color: var(--text-color-darkmode);
+}
+body.darkmode #busqueda-pais{
+    background-color: var(--bg-second-darkmode);
+    color: var(--text-color-darkmode);
+}
+body.darkmode #busqueda-pais::placeholder{
+    color: var(--text-color-darkmode);
+}
+body.darkmode form .form__select{
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: var(--bg-second-darkmode);
+    color: var(--text-color-darkmode);
+}
+body.darkmode .card{
+    background-color: var(--bg-second-darkmode);
+}
+/******* RESPONSIVE ******/
+@media only screen and (max-width: 1200px){
+    section{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width: 1070px){
+    section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 800px){
+    section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 615px){
+    main{
+        margin: 20px;
+    }
+    form{
+        flex-direction: column;
+    }
+    form .form__select{
+        margin-top: 10px;
+    }
+    section{
+        grid-template-columns: 1fr;
+    }
+}

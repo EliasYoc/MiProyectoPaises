@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Países</h1>
+        <div class="switch-darkmode">
+
+            <div class="switch-circle"></div>
+            <div class="sun"></div>
+            <div class="moon"></div>
+        </div>
+    </header>
+    <main>
+        <form id="form-pais">
+            <input type="text" name="search-country" id="busqueda-pais" placeholder="Buscar pais">
+            <select class="form__select" name="region" id="region">
+                <option value="default">Filtrar por región</option>
+                <option class="form__option" value="africa">Africa</option>
+                <option class="form__option" value="americas">America</option>
+                <option class="form__option" value="asia">Asia</option>
+                <option class="form__option" value="europe">Europe</option>
+                <option class="form__option" value="oceania">Oceania</option>
+                <option class="form__option" value="desconocido">Desconocido</option>
+
+            </select>
+        </form>
+        <section class="content-country">
+
+
+        </section>
+    </main>
+    <template id="card-template">
+        <div class="card">
+            <div class="justify-content">
+                <div class="bg-img">
+                    <img loading="lazy" src="https://restcountries.eu/data/afg.svg" alt="">
+                </div>
+                <div class="info-country">
+                    <div class="title">
+                        <h5>Afnjsnjs</h5>
+                        <h6>jioji</h6>
+                    </div>
+                    <div class="country-data">
+                        <p>población: <span>000</span></p>
+                        <p>Región: <span>000</span></p>
+                        <p>capital: <span>000</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="js/paises.js" type="module"></script>
+</body>
+
+</html>
